@@ -17,17 +17,15 @@
 
     <div class="container mx-auto px-6 flex items-center justify-between">
       <h1 class="text-2xl font-extrabold italic">MyCitySpots 🌍</h1>
-      <a href="add.html">
-        <button class="bg-lime-300 hover:bg-lime-500 text-blue-900 px-4 py-2 rounded-xl font-semibold italic text-lg transition-all">
+      <div>
+        <button onclick="UserPage()"
+        class="bg-lime-300 hover:bg-lime-500 text-blue-900 px-4 py-2 rounded-xl font-semibold italic text-lg transition-all">
           + Create Spot
         </button>
         <button onclick="DarkMode()" class="bg-yellow-200 text-black px-3 py-2 rounded-md shadow hover:bg-yellow-300 transition-all dark:bg-yellow-600 dark:text-white hover:dark:bg-yellow-700">
   🌙 Toggle Mode
 </button>
-
-
-
-      </a>
+</div>
     </div>
   </nav>
 <!-- header -->
@@ -46,7 +44,8 @@
   📋 Card View of Shared Spots
 </h2>
 
- <section class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 px-6 ">  
+ <section class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 px-6 "> 
+   
       <div class="border-4 border-stone-600 h-auto p-2 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200">
 
       <!-- Image -->
@@ -124,7 +123,8 @@ class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2
           class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2 transition-all font-semibold italic">
             Read More +
           </button>
-        </div>      
+        </div>    
+
    </section>
 
    <!-- List View -->

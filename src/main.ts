@@ -39,7 +39,13 @@ function closeModal() {
   }
 }
 
+function UserPage(){
+    alert("its working")
+    location.href='blog.html'
+}
+
 // Make functions accessible in HTML inline onclick
 (window as any).showModal = showModal;
 (window as any).closeModal = closeModal;
 (window as any).DarkMode = DarkMode;
+(window as any).UserPage = UserPage;
