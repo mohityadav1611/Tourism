@@ -15,7 +15,7 @@
   <!-- Header -->
     <nav class="bg-blue-700 text-white mt-2 p-3 shadow-md dark:bg-blue-900 dark:text-white">
 
-    <div class="container  mx-auto h-11 px-6 flex items-center justify-between">
+    <div class="container  mx-auto h-20 px-6 md:h-11 flex items-center justify-between">
       <img src="./images/Logo 2.png" width="120px" height="auto" alt="Logo">
       <!-- <h1 class="text-2xl font-extrabold italic">MyCitySpots 🌍</h1> -->
       <div>
@@ -42,10 +42,10 @@
 
   
    <div class="flex justify-around">
-    <div>
+    <!-- <div>
 <h2 id="cardText" class="text-2xl font-bold text-center text-blue-800 mt-5 mb-4 underline underline-offset-4">
   📋 Card View of Shared Spots
-</h2></div>
+</h2></div> -->
 <div>
 <button onclick="SwitchView(event)" id="toggleBtn"
 class="bg-purple-200 hover:bg-purple-400 text-gray-800 mt-4 rounded-lg p-3">📃 Show List View</button>
@@ -72,9 +72,9 @@ class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray
 </div>
 
    <!-- List View -->
-<h2 id="listText" class="text-2xl hidden font-bold text-center text-blue-800 mt-10 mb-4 underline underline-offset-4">
+<!-- <h2 id="listText" class="text-2xl hidden font-bold text-center text-blue-800 mt-10 mb-4 underline underline-offset-4">
   📋 List View of Shared Spots
-</h2>
+</h2> -->
    <section id="listSection" class="hidden">
     <div id="listContainer" class="space-y-4 mt-6">
  
@@ -95,8 +95,8 @@ class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray
         class="text-4xl block font-semibold dark:text-white text-gray-700 mb-1 m-3 p-3 ">Author Profile</label><br/>
         
         <label for="Name" class="block  dark:text-white font-semibold text-lg text-gray-700 ">✍️ Enter Your Name   
-            <input type="text" id="authorName" placeholder="Contributor name"
-        class="w-full m-2 p-3 border-2 dark:bg-gray-700 dark:text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800" />
+            <input type="text"  id="authorName" placeholder="Contributor name"
+        class="w-full m-2 p-3 border-2  dark:bg-gray-700 dark:text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800" />
            </label>
         </div>
     </div>
@@ -109,7 +109,7 @@ class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray
     <!-- Place Name -->
     <div>
       <label class="block dark:bg-gray-700 dark:text-white font-semibold text-lg text-gray-700 mb-1">📍 Place Name</label>
-      <input type="text" id="placeName" placeholder="Enter a famous place"
+      <input type="text" required id="placeName" placeholder="Enter a famous place"
         class="w-full dark:bg-gray-700 dark:text-white p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800" />
     </div>
 
@@ -117,13 +117,13 @@ class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray
     <div class="flex flex-col md:flex-row gap-4">
       <div class="w-full ">
         <label class="block dark:bg-gray-700 dark:text-white font-semibold text-lg text-gray-700 mb-1">🏙️ City</label>
-        <input type="text" id="city" placeholder="Enter city name"
+        <input type="text" required id="city" placeholder="Enter city name"
           class="w-full p-3 border-2 dark:bg-gray-700 dark:text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800" />
       </div>
       <div class="w-full">
         <label for="state" class="block font-semibold text-lg text-gray-700 mb-1">🌍 State</label>
-<select id="state"
-  class="w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800">
+<select id="state" required
+  class="w-full p-3  border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800">
   <option value="">-- Select State --</option>
   <option value="Andhra Pradesh">Andhra Pradesh</option>
   <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -176,21 +176,21 @@ class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray
     <!-- Image URL -->
     <div>
       <label class="block dark:bg-gray-700 dark:text-white font-semibold text-lg text-gray-700 mb-1">🖼️ Image URL</label>
-      <input type="file" id="imageUrl" placeholder=""
+      <input type="file" id="imageUrl" placeholder="" required
         class="w-full dark:bg-gray-700 dark:text-white p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800" />
     </div>
 
     <!-- Short Description -->
     <div>
       <label class="block dark:bg-gray-700 dark:text-white font-semibold text-lg text-gray-700 mb-1">✏️ Short Description</label>
-      <input type="text" id="shortDesc" placeholder="One-line overview"
+      <input type="text" id="shortDesc" placeholder="One-line overview" required
         class="w-full dark:bg-gray-700 dark:text-white p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800" />
     </div>
 
     <!-- Detailed Description -->
     <div>
       <label class="block dark:bg-gray-700 dark:text-white font-semibold text-lg text-gray-700 mb-1">📖 Detailed Description</label>
-      <textarea id="detailedDesc" rows="5" placeholder="Write full description here..."
+      <textarea id="detailedDesc" required rows="5" placeholder="Write full description here..."
         class="w-full dark:bg-gray-700 dark:text-white p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800"></textarea>
     </div>
 

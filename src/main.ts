@@ -67,7 +67,7 @@ let ListView= true;
 function SwitchView(event:Event) {
   event.preventDefault();
   const cardText = document.getElementById("cardText");
-   const listText = document.getElementById("listText");
+  //  const listText = document.getElementById("listText");
   const cardSection = document.getElementById("cardSection");
   const listSection = document.getElementById("listSection");
   const toggleBtn = document.getElementById("toggleBtn"); // Optional: for changing text
@@ -77,16 +77,16 @@ function SwitchView(event:Event) {
     cardSection?.classList.add("hidden");
     cardText?.classList.add("hidden");
     listSection?.classList.remove("hidden");
-     if(!listText) {return}
-     listText.classList.remove("hidden")
+    //  if(!listText) {return}
+    //  listText.classList.remove("hidden")
     
     toggleBtn.innerText = "🧩 Show Card View";
   } else {
     cardSection?.classList.remove("hidden");
     cardText?.classList.remove("hidden");
     listSection?.classList.add("hidden");
-     if(!listText) {return}
-     listText.classList.add("hidden")
+    //  if(!listText) {return}
+    //  listText.classList.add("hidden")
     toggleBtn.innerText = "📃 Show List View";
   }
 
@@ -98,7 +98,14 @@ function SwitchView(event:Event) {
 
 
 function Submit(event: Event) {
-  event.preventDefault();
+  // event.preventDefault();
+  
+  const form = document.getElementById("spotForm") as HTMLFormElement;
+
+  if (!form.checkValidity()) {
+    form.reportValidity(); // Show built-in browser validation messages
+    return;
+  }
 
   const AuthorName = (document.getElementById("authorName") as HTMLInputElement).value;
   const Place = (document.getElementById("placeName") as HTMLInputElement).value;
@@ -111,7 +118,7 @@ function Submit(event: Event) {
   const file = ImageInput.files?.[0];
 
   if (!file) {
-    alert("Please upload an image!");
+    // alert("Please upload an image!");
     return;
   }
 
@@ -147,8 +154,10 @@ function Submit(event: Event) {
     if (cardContainer) cardContainer.innerHTML = "";
 
     display(); // refresh with latest data
+    
   };
-
+  const Modal2=document.getElementById("formModal")
+  Modal2?.classList.add("hidden")
   reader.readAsDataURL(file);
 }
 
@@ -188,6 +197,7 @@ function display() {
 
     cardContainer.appendChild(newDiv);
   });
+  
 }
 
 display();
