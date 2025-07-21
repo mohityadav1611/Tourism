@@ -18,7 +18,7 @@
     <div class="container mx-auto px-6 flex items-center justify-between">
       <h1 class="text-2xl font-extrabold italic">MyCitySpots 🌍</h1>
       <div>
-        <button onclick="UserPage()"
+        <button onclick="UserPage(event)"
         class="bg-lime-300 hover:bg-lime-500 text-blue-900 px-4 py-2 rounded-xl font-semibold italic text-lg transition-all">
           + Create Spot
         </button>
@@ -39,7 +39,7 @@
   </p>
 </section>
 
-  <!-- Card Section -->
+  
    <div class="flex justify-around">
     <div>
 <h2 id="cardText" class="text-2xl font-bold text-center text-blue-800 mt-5 mb-4 underline underline-offset-4">
@@ -48,34 +48,20 @@
 <div>
 <button onclick="SwitchView(event)" id="toggleBtn"
 class="bg-purple-200 hover:bg-purple-400 text-gray-800 mt-4 rounded-lg p-3">📃 Show List View</button>
+<input id="search" oninput="Search()" type="text" placeholder="Search places or cities..."
+class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800">
 </div>
+
 </div>
+<!-- Card Section -->
+ <section id="cardSection" class=" mt-10 px-6 "> 
+  <!-- Empty Div -->
+  
+    <div id="cardContainer" class="grid  md:grid-cols-3 sm:grid-cols-2 gap-6">
+</div>
+   </section>
 
- <section id="cardSection" class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 px-6 "> 
-   
-      <div class="border-4 border-stone-600 h-auto p-2 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200">
-
-      <!-- Image -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-sm ">
-        <img src="./images/Ganesh mandir.jfif" 
-        class=" w-full h-48 object-cover" alt="Ganesh Mandir">
-        </div>
-<!-- Card Body -->
-        <div class="p-3">
-          <!-- Card Title -->
-        <h5 class="text-xl font-bold dark:text-white  text-blue-800 mb-2">📍 Khajrana Ganesh Mandir </h5>
-        <!-- Card Disc -->
-         <p class="text-gray-700  dark:text-white text-lg mb-1">📍Indore (M.P.)</p>
-        <p class=" text-gray-700 text-sm  dark:text-white text-justify">> 
-          The temple holds significant religious and cultural importance and is a popular pilgrimage site for devotees of Lord Ganesha</p>
-        </div> 
-
-          <button onclick="showModal('Khajrana Ganesh Mandir', 'Khajrana Ganesh Mandir is one of the most famous temples in Indore, dedicated to Lord Ganesha. Built by Rani Ahilyabai Holkar, it is believed to fulfill the wishes of its devotees. People from all over visit this temple to offer prayers and seek blessings, especially during Ganesh Chaturthi.')" 
-class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2 transition-all font-semibold italic">
-  Read More +
-</button>
-
-<!-- Dynamic modal -->
+   <!-- Dynamic modal -->
          <div id="dynamicModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
   <div class="bg-white w-[90%] max-w-md p-6 rounded-lg shadow-lg relative">
     <button onclick="closeModal()" class="absolute top-2 right-3 text-xl font-bold text-gray-600 hover:bg-red-500">✖️</button>
@@ -83,132 +69,28 @@ class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2
     <p id="modalContent" class="text-gray-700 leading-relaxed overflow-y-auto max-h-40"></p>
   </div>
 </div>
-        </div>
-
-        <!-- Card-2 -->
-
-      <div class="border-4 border-stone-600 h-auto p-2 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200">
-
-      <!-- Image -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-sm ">
-        <img src="./images/Mahakaal Mandir.jfif" 
-        class=" w-full h-48 object-cover" alt="Mahakaal Mandir">
-        </div>
-<!-- Card Body -->
-        <div class="p-3">
-          <!-- Card Title -->
-        <h5 class="text-xl font-bold  dark:text-white text-blue-800 mb-2">📍 Mahakaal Mandir </h5>
-        <!-- Card Disc -->
-         <p class="text-gray-700  dark:text-white text-lg mb-1">📍Ujjain (M.P.)</p>
-        <p class=" text-gray-700  dark:text-white text-sm  text-justify">> 
-           Mahakal Mandir in Ujjain is one of the 12 Jyotirlingas of Lord Shiva, attracting thousands of devotees every year.</p>
-        </div> 
-          <button onclick="showModal('Mahakal Mandir, Ujjain', 'The Mahakal Temple of Ujjain is one of the most sacred and significant Jyotirlingas in India, dedicated to Lord Shiva. The temple is known for its spiritual energy and ancient Bhasma Aarti, where ashes are offered to the deity. Located on the banks of the Shipra River, it draws pilgrims and tourists from all over the world.')" 
-          class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2 transition-all font-semibold italic">
-            Read More +
-          </button>
-        </div>
-
-        <!-- Card-3 -->  
-             <div class="border-4 border-stone-600 h-auto p-2 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200">
-
-          <div class="bg-white rounded-lg shadow-md overflow-hidden max-w-sm ">
-            <img src="./images/Jahaz Mahal.jfif" alt="Jahaz Mahal"
-            class="w-full h-48 object-cover">
-          </div>
-         <!-- Card Body -->
-        <div class="p-3">
-          <!-- Card Title -->
-        <h5 class="text-xl font-bold  dark:text-white text-blue-800 mb-2">📍 Mandu Fort </h5>
-        <!-- Card Disc -->
-         <p class="text-gray-700  dark:text-white text-lg mb-1">📍Dhar (M.P.)</p>
-        <p class=" text-gray-700  dark:text-white text-sm  text-justify">> 
-           Mandu is an ancient city known for its Afghan architecture and romantic tales of Baz Bahadur and Rani Roopmati.
-          </p>
-        </div> 
-          <button onclick="showModal('Mandu Fort, Dhar', 'Set in the Vindhya hills, Mandu boasts stunning forts, palaces, and lakes. Its unique Indo-Afghan architecture and rich history make it a must-visit destination for heritage lovers.')" 
-          class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2 transition-all font-semibold italic">
-            Read More +
-          </button>
-        </div>    
-
-   </section>
 
    <!-- List View -->
-<h2 class="text-2xl font-bold text-center text-blue-800 mt-10 mb-4 underline underline-offset-4">
+<h2 id="listText" class="text-2xl hidden font-bold text-center text-blue-800 mt-10 mb-4 underline underline-offset-4">
   📋 List View of Shared Spots
 </h2>
-
-
-
-   <section id="listSection">
-    <div class="space-y-4 mt-6">
+   <section id="listSection" class="hidden">
+    <div id="listContainer" class="space-y-4 mt-6">
   
 
-  <!-- List Item 1 -->
-  <div class="bg-white dark:bg-gray-800 dark:text-gray-200 p-4 rounded-lg shadow-md flex flex-col md:flex-row items-start md:items-center justify-between">
-    <div class="bg-white rounded-lg shadow-md overflow-hidden max-w-sm">
-      <img src="./images/Ganesh mandir.jfif "
-      class="w-80 h-48 object-cover" alt="Ganesh Mandir">
-    </div>
-    <div>
-      <h3 class="text-xl font-bold ml-6 text-green-700">📍Khajrana Ganesh Mandir, Indore</h3>
-      <p class="text-gray-600 dark:text-white mt-1 ml-6">
-        One of the most famous temples in Indore, built by Rani Ahilyabai Holkar, known for wish fulfillment.
-      </p>
-    </div>
-    <button onclick="showModal('Khajrana Ganesh Mandir, Indore', 'Khajrana Ganesh Mandir is one of the most famous temples in Indore, dedicated to Lord Ganesha. Built by Rani Ahilyabai Holkar, it is believed to fulfill the wishes of its devotees.')" 
-      class="mt-3 md:mt-0 bg-green-200 hover:bg-green-400 text-gray-800 px-4 py-2 rounded-lg transition-all font-semibold italic">
-      Read More +
-    </button>
-  </div>
+ 
 
-  <!-- List Item 2 -->
-  <div class="bg-white dark:bg-gray-800 dark:text-gray-200 p-4 rounded-lg shadow-md flex  md:flex-row items-start md:items-center justify-between">
-    <div class="bg-white rounded-lg shadow-md overflow-hidden max-w-sm">
-      <img src="./images/Mahakaal Mandir.jfif "
-      class="w-80 h-48 object-cover" alt="Jahaz Mahal">
-    </div>
-    <div>
-      <h3 class="text-xl ml-2 font-bold text-purple-700">📍Mahakal Mandir, Ujjain</h3>
-      <p class="text-gray-600 dark:text-white ml-3 mt-1">
-                Sacred Jyotirlinga in Ujjain known for Bhasma Aarti and spiritual atmosphere.
-      </p>
-    </div>
-    <button onclick="showModal('Mahakal Mandir, Ujjain', 'The Mahakal Temple of Ujjain is one of the most sacred and significant Jyotirlingas in India...')" 
-      class="mt-3 md:mt-0 bg-purple-200 hover:bg-purple-400 text-gray-800 px-4 py-2 rounded-lg transition-all font-semibold italic">
-      Read More +
-    </button>
-  </div>
-
-  <!-- List Item 3 -->
-  <div class="bg-white dark:bg-gray-800 dark:text-gray-200 p-4 rounded-lg shadow-md flex  md:flex-row items-start md:items-center justify-between">
-    <div class="bg-white rounded-lg shadow-md overflow-hidden max-w-sm">
-      <img src="./images/Jahaz Mahal.jfif "
-      class="w-80 h-48 object-cover" alt="Mahakaal Mandir">
-    </div>
-    <div>
-      <h3 class="text-xl ml-10 font-bold text-purple-700">📍Mandu Fort, Dhar</h3>
-      <p class="text-gray-600  dark:text-white ml-10 mt-1">
-        Mandu is an ancient city known for its Afghan architecture and romantic tales of Baz Bahadur and Rani Roopmati.
-      </p>
-    </div>
-    <button onclick="showModal('Mandu Fort, Dhar', 'Set in the Vindhya hills, Mandu boasts stunning forts, palaces, and lakes. Its unique Indo-Afghan architecture and rich history make it a must-visit destination for heritage lovers.')" 
-      class="mt-3 md:mt-0 bg-purple-200 hover:bg-purple-400 text-gray-800 px-4 py-2 rounded-lg transition-all font-semibold italic">
-      Read More +
-    </button>
-  </div>
-</div>
-
+</section>
 <!-- POP Model Section -->
 
-<div id="formModal" class="fixed  hidden inset-0 bg-black bg-opacity-50 z-50 items-center justify-center overflow-y-auto">
-   
+
+ <div id="formModal" class="fixed hidden inset-0 bg-black bg-opacity-50 z-50 items-center justify-center overflow-y-auto ">
+ 
   <!-- Authoer section -->
    <div>
     
-        <form class="space-y-6 " id="spotForm" >
-          <button onclick="closeFormModal()" class="absolute top-4 right-4 text-2xl font-bold text-white hover:text-red-500">✖️</button>
+        <form class="space-y-6 block" id="spotForm" >
+          <button onclick="closeFormModal(event)" class="absolute top-4 right-4 text-2xl font-bold text-white hover:text-red-500">✖️</button>
 
     <div class= "bg-white dark:bg-gray-700 dark:text-white py-8 px-6 m-4 rounded-lg shadow-lg max-w-3xl mx-auto">
         <div class="mt-2 text-center ">
@@ -295,9 +177,10 @@ class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2
 </div>
 
 </div>
+</div>
 
 <!-- Footer section -->
-   </section>
+   
   <footer class="bg-gray-100 text-gray-700 mt-10 dark:bg-gray-800 dark:text-gray-300">
 
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
