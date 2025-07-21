@@ -15,8 +15,9 @@
   <!-- Header -->
     <nav class="bg-blue-700 text-white mt-2 p-3 shadow-md dark:bg-blue-900 dark:text-white">
 
-    <div class="container mx-auto px-6 flex items-center justify-between">
-      <h1 class="text-2xl font-extrabold italic">MyCitySpots 🌍</h1>
+    <div class="container  mx-auto h-11 px-6 flex items-center justify-between">
+      <img src="./images/Logo 2.png" width="120px" height="auto" alt="Logo">
+      <!-- <h1 class="text-2xl font-extrabold italic">MyCitySpots 🌍</h1> -->
       <div>
         <button onclick="UserPage(event)"
         class="bg-lime-300 hover:bg-lime-500 text-blue-900 px-4 py-2 rounded-xl font-semibold italic text-lg transition-all">
@@ -30,11 +31,11 @@
   </nav>
 <!-- header -->
 
-<section class="bg-white py-8 rounded-lg shadow-md my-6 mx-4">
-  <h2 class="text-3xl text-blue-800 font-extrabold text-center mb-2">
+<section class="bg-white dark:bg-gray-800 shadow-blue-600  dark:text-white py-8 rounded-lg shadow-md my-6 mx-4">
+  <h2 class="text-3xl dark:text-white text-blue-800 font-extrabold text-center mb-2">
     🌍 Welcome to Hidden Gems from Across India
   </h2>
-  <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto px-4">
+  <p class="text-center dark:text-white text-gray-600 text-lg max-w-2xl mx-auto px-4">
     Real places suggested by real people – from every city, every corner!
   </p>
 </section>
@@ -76,13 +77,9 @@ class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray
 </h2>
    <section id="listSection" class="hidden">
     <div id="listContainer" class="space-y-4 mt-6">
-  
-
  
-
 </section>
 <!-- POP Model Section -->
-
 
  <div id="formModal" class="fixed hidden inset-0 bg-black bg-opacity-50 z-50 items-center justify-center overflow-y-auto ">
  
@@ -124,9 +121,40 @@ class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray
           class="w-full p-3 border-2 dark:bg-gray-700 dark:text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800" />
       </div>
       <div class="w-full">
-        <label class="block dark:bg-gray-700 dark:text-white font-semibold text-lg text-gray-700 mb-1">🌍 State</label>
-        <input type="text" id="state" placeholder="Enter state name"
-          class="w-full dark:bg-gray-700 dark:text-white p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800" />
+        <label for="state" class="block font-semibold text-lg text-gray-700 mb-1">🌍 State</label>
+<select id="state"
+  class="w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800">
+  <option value="">-- Select State --</option>
+  <option value="Andhra Pradesh">Andhra Pradesh</option>
+  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+  <option value="Assam">Assam</option>
+  <option value="Bihar">Bihar</option>
+  <option value="Chhattisgarh">Chhattisgarh</option>
+  <option value="Goa">Goa</option>
+  <option value="Gujarat">Gujarat</option>
+  <option value="Haryana">Haryana</option>
+  <option value="Himachal Pradesh">Himachal Pradesh</option>
+  <option value="Jharkhand">Jharkhand</option>
+  <option value="Karnataka">Karnataka</option>
+  <option value="Kerala">Kerala</option>
+  <option value="Madhya Pradesh">Madhya Pradesh</option>
+  <option value="Maharashtra">Maharashtra</option>
+  <option value="Manipur">Manipur</option>
+  <option value="Meghalaya">Meghalaya</option>
+  <option value="Mizoram">Mizoram</option>
+  <option value="Nagaland">Nagaland</option>
+  <option value="Odisha">Odisha</option>
+  <option value="Punjab">Punjab</option>
+  <option value="Rajasthan">Rajasthan</option>
+  <option value="Sikkim">Sikkim</option>
+  <option value="Tamil Nadu">Tamil Nadu</option>
+  <option value="Telangana">Telangana</option>
+  <option value="Tripura">Tripura</option>
+  <option value="Uttar Pradesh">Uttar Pradesh</option>
+  <option value="Uttarakhand">Uttarakhand</option>
+  <option value="West Bengal">West Bengal</option>
+</select>
+
       </div>
     </div>
 
@@ -193,7 +221,7 @@ class="shadow-sm ml-1  dark:bg-gray-700 dark:text-white p-3 border-2 border-gray
 
     <!-- Right Section -->
     <div class="mt-4 md:mt-0 text-center md:text-right">
-      <p class="text-sm">📧 contact@mohit.544509@gmail.com</p>
+      <p class="text-sm"><a href="mailto:mohit.544509@gmail.com">📧 contact@mohit.544509@gmail.com</a></p>
       <p class="text-sm mt-1">© 2025 MyCitySpots. All rights reserved.</p>
     </div>
     

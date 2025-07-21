@@ -172,16 +172,18 @@ function display() {
       <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-sm">
         <img src="${spot.Image}" class="w-full h-48 object-cover" alt="${spot.Place}" />
       </div>
-      <div class="p-3">
+      <div class="p-3 h-48">
         <h5 class="text-xl font-bold dark:text-white text-blue-800 mb-2">📍 ${spot.Place}</h5>
         <p class="text-gray-700 dark:text-white text-lg mb-1">📍${spot.City}, ${spot.State}</p>
         <p class="text-gray-700 text-sm dark:text-white text-justify">> ${spot.Short}</p>
         <h4 class="text-sm font-mono dark:text-white text-blue-700 mt-1">By:- ✍️ ${spot.AuthorName}</h4>
       </div>
+      <div class="m-auto">
       <button onclick="showModal('${spot.Place}, ${spot.City}', '${spot.Detail}')"
         class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2 transition-all font-semibold italic">
         Read More +
       </button>
+      </div>
     `;
 
     cardContainer.appendChild(newDiv);
@@ -200,22 +202,25 @@ function displayList(){
   ResultData.forEach((spot: any) => {
     const newDiv = document.createElement("div");
 
-    newDiv.className ="bg-white shadow-blue-400  dark:bg-gray-800 dark:text-gray-200 p-4 rounded-lg shadow-md flex flex-col md:flex-row items-start md:items-center justify-between"
+    newDiv.className ="bg-white  shadow-blue-400  dark:bg-gray-800 dark:text-gray-200 p-4 rounded-lg shadow-md flex flex-col md:flex-row items-start md:items-center "
   newDiv.innerHTML =`
-      <div class="bg-white  rounded-lg shadow-md overflow-hidden max-w-sm">
+      <div class="bg-white w-auto  rounded-lg shadow-md overflow-hidden max-w-sm">
       <img src="${spot.Image}"
-      class="w-80 h-48 object-cover" alt="${spot.Place}">
+      class=" h-48 w-72 object-cover" alt="${spot.Place}">
     </div>
-    <div>
-      <h3 class="text-xl font-bold ml-6 text-green-700">📍${spot.Place}, ${spot.City}</h3>
-      <p class="text-gray-600 dark:text-white mt-1 ml-6">
+    
+    <div class="ml-10 w-2/4">
+      <h3 class="text-xl  font-bold  text-green-700">📍${spot.Place}, ${spot.City}</h3>
+      <p class="text-gray-600 dark:text-white ">
         ${spot.Short}
       </p>
-    </div>
+      </div>
+    
+    <div class="ml-10 w-32 ">
     <button onclick="showModal('${spot.Place}, ${spot.City}', '${spot.Detail}')" 
       class="mt-3 md:mt-0 bg-green-200 hover:bg-green-400 text-gray-800 px-4 py-2 rounded-lg transition-all font-semibold italic">
       Read More +
-    </button>
+    </button><div/>
   `;
   listContainer.appendChild(newDiv);
   
@@ -242,33 +247,63 @@ function Search() {
 
   //  Clear the existing cards
   const cardContainer = document.getElementById("cardContainer");
+  const listContainer = document.getElementById("listContainer")
   if (cardContainer) cardContainer.innerHTML = "";
+  if(listContainer) listContainer.innerHTML="";
 
   //  Show filtered results as cards
   filteredData.forEach((spot: any) => {
     const newDiv = document.createElement("div");
 
     newDiv.className =
-      "border-4 border-stone-600 h-auto p-2 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200";
+      "bg-white  rounded-md shadow-blue-400  shadow-md  h-auto p-2 dark:bg-gray-800  dark:text-gray-200";
     newDiv.innerHTML = `
       <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-sm">
         <img src="${spot.Image}" class="w-full h-48 object-cover" alt="${spot.Place}" />
       </div>
-      <div class="p-3">
+      <div class="p-3 h-48">
         <h5 class="text-xl font-bold dark:text-white text-blue-800 mb-2">📍 ${spot.Place}</h5>
-        <p class="text-gray-700 dark:text-white text-lg mb-1">📍 ${spot.City}, ${spot.State}</p>
+        <p class="text-gray-700 dark:text-white text-lg mb-1">📍${spot.City}, ${spot.State}</p>
         <p class="text-gray-700 text-sm dark:text-white text-justify">> ${spot.Short}</p>
         <h4 class="text-sm font-mono dark:text-white text-blue-700 mt-1">By:- ✍️ ${spot.AuthorName}</h4>
       </div>
+      <div class="m-auto">
       <button onclick="showModal('${spot.Place}, ${spot.City}', '${spot.Detail}')"
         class="bg-purple-200 hover:bg-purple-400 text-gray-800 px-3 py-1 rounded-lg mt-2 transition-all font-semibold italic">
         Read More +
       </button>
+      </div>
     `;
 
+    const newDiv1 = document.createElement("div");
+
+    newDiv1.className ="bg-white  shadow-blue-400  dark:bg-gray-800 dark:text-gray-200 p-4 rounded-lg shadow-md flex flex-col md:flex-row items-start md:items-center "
+  newDiv1.innerHTML =`
+      <div class="bg-white w-auto  rounded-lg shadow-md overflow-hidden max-w-sm">
+      <img src="${spot.Image}"
+      class=" h-48 w-72 object-cover" alt="${spot.Place}">
+    </div>
+    
+    <div class="ml-10 w-2/4">
+      <h3 class="text-xl  font-bold  text-green-700">📍${spot.Place}, ${spot.City}</h3>
+      <p class="text-gray-600 dark:text-white ">
+        ${spot.Short}
+      </p>
+      </div>
+    
+    <div class="ml-10 w-32 ">
+    <button onclick="showModal('${spot.Place}, ${spot.City}', '${spot.Detail}')" 
+      class="mt-3 md:mt-0 bg-green-200 hover:bg-green-400 text-gray-800 px-4 py-2 rounded-lg transition-all font-semibold italic">
+      Read More +
+    </button><div/>
+  `;
+
     cardContainer?.appendChild(newDiv);
+    listContainer?.appendChild(newDiv1);
   });
 }
+
+ 
 
 
 // Make functions accessible in HTML inline onclick
